@@ -1,0 +1,4 @@
+// the configured options and settings for Tutorial
+#define _VERSION_MAJOR @PROJECT_VERSION_MAJOR@
+#define _VERSION_MINOR @PROJECT_VERSION_MINOR@
+#define _VERSION_PATCH @PROJECT_VERSION_PATCH@
