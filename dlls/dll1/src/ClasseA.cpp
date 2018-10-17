@@ -3,7 +3,7 @@
 ClasseA::ClasseA(){};
 ClasseA::~ClasseA(){};
 
-static const char* ClasseA::value(){
+const char* ClasseA::value(){
 		return "A";
 }	
 
