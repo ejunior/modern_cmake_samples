@@ -1,4 +1,4 @@
-
+#include "ClasseA.h"
 
 ClasseA::ClasseA(){};
 ClasseA::~ClasseA(){};
