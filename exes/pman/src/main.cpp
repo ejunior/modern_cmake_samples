@@ -4,7 +4,7 @@
 #include <iterator>
 #include <algorithm>
 
-#include "../../dlls/dll1/dll1.h"
+#include <dll1/dll1.h>
 
 int main()
 {

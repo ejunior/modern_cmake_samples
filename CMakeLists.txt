@@ -8,17 +8,20 @@ project(pman VERSION 0.0.3 LANGUAGES CXX)
 #set(VERSION_PATCH "2")
 #set(VERSION "${VERSION_MAJOR}.${VERSION_MINOR}.${VERSION_PATCH}")
 
-set(ALLEGRO_VERSION "5.2.4.0")
+# Must use GNUInstallDirs to install libraries into correct
+# locations on all platforms.
+include(GNUInstallDirs)
+
+#set(ALLEGRO_VERSION "5.2.4.0")
 #set(allegro5_DIR ${PROJECT_SOURCE_DIR}/libsrc/allegro-${ALLEGRO_VERSION})
 find_package(Boost REQUIRED COMPONENTS system filesystem chrono)
 
 # set environmet
 add_definitions(-DTEST_DEF) # add definitions 
-include_directories(${PROJECT_SOURCE_DIR}/inc) 
+include_directories(${PROJECT_SOURCE_DIR}/include) 
 
 ## external inlcudes libs
 #link_directories(${PROJECT_SOURCE_DIR}/external/lib)  
-
 message("Binary tree Path:  ${PROJECT_BINARY_DIR}")
 message("Source tree Path:  ${PROJECT_SOURCE_DIR}")
 
