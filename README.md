@@ -8,10 +8,10 @@ This project is a sandbox to learn how to structure a C++ project using Modern C
    - BOOST
    - Allegro 5.2
    - compatibility:
-      GCC(linux) or 
-      MinGW (Windows/Linux) 
-      MSVC
-      clang (OSX)
+      - GCC(linux) or 
+      - MinGW (Windows/Linux) 
+      - MSVC
+      - clang (OSX)
 
 - PROJECT OBJECTIVES:
    - Requirements:
