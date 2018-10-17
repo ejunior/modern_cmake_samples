@@ -3,19 +3,18 @@
 This project is a sandbox to learn how to structure a C++ project using Modern CMake (3.5)
 
 
-DEPENDENCIES:
-
-   -CMake 3.5
-   -BOOST
-   -Allegro 5.2
-   -compatibility:
+- DEPENDENCIES:
+   - CMake 3.5
+   - BOOST
+   - Allegro 5.2
+   - compatibility:
       GCC(linux) or 
       MinGW (Windows/Linux) 
-      MSVC, 
+      MSVC
       clang (OSX)
 
-PROJECT OBJECTIVES:
-   -Requirements:
+- PROJECT OBJECTIVES:
+   - Requirements:
       - build and install its dependecies correctly on Linux, Windows and OSX.
       - minimal dependency management
       - export libraries (and use it as internal dependencies)
