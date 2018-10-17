@@ -3,7 +3,7 @@ project(Dll1 VERSION 0.1 LANGUAGES CXX)
 # header and sources
 
 # create the dll
-add_library(${PROJECT_NAME} SHARED src/dll1.cpp)
+add_library(${PROJECT_NAME} SHARED src/dll1.cpp src/ClasseA.cpp)
 
 
 target_include_directories(${PROJECT_NAME} PUBLIC
