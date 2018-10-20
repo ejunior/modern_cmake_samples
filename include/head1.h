@@ -1,17 +1,21 @@
 #ifndef HEAD1_H
 #define HEAD1_H
 
+#include <string>
+
+using namespace std;
+
 class Head1
 {
 public:
-	Head1(){}
-	~Head1(){}
+	Head1() = default;
+	~Head1() = default;
 
-	inline const char* getText(){
-		#ifndef TEST_DEF
-			return "TEST_DEF defined";
+	const string getText(){
+		#ifdef TEST_DEF
+	        return string("TEST_DEF defined");
 		#else
-			return "TEST_DEF _NOT_ defined";
+			return string("TEST_DEF _NOT_ defined");
 		#endif
 	}
 };

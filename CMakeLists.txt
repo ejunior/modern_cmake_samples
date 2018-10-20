@@ -10,15 +10,18 @@ project(pman VERSION 0.0.3 LANGUAGES CXX)
 
 # Must use GNUInstallDirs to install libraries into correct
 # locations on all platforms.
-include(GNUInstallDirs)
+#include(GNUInstallDirs)
 
 #set(ALLEGRO_VERSION "5.2.4.0")
 #set(allegro5_DIR ${PROJECT_SOURCE_DIR}/libsrc/allegro-${ALLEGRO_VERSION})
 find_package(Boost REQUIRED COMPONENTS system filesystem chrono)
 
 # set environmet
-add_definitions(-DTEST_DEF) # add definitions 
-include_directories(${PROJECT_SOURCE_DIR}/include) 
+include_directories(${PROJECT_SOURCE_DIR}/include)
+add_definitions(-DTEST_DEF) # add definitions
+
+#target_compile_features(${PROJECT_NAME} PRIVATE CXX_STANDARD 11)
+
 
 ## external inlcudes libs
 #link_directories(${PROJECT_SOURCE_DIR}/external/lib)  

@@ -12,12 +12,13 @@ int main()
 
 	Dll1 dll1;
 
-    std::cout << "Type in any number: ";
-	std::cout << "teste: " << dll1.getText() << std::endl;
+    std::cout << "teste: " << dll1.getText() << "\n\n";
 
-    std::for_each(
-        in(std::cin), in(), std::cout 
-				<< (boost::lambda::_1 * 10) 
-				<< "\nType in another number: " );
+//    std::cout << "Type in any number: ";
+
+//    std::for_each(
+//        in(std::cin), in(), std::cout
+//				<< (boost::lambda::_1 * 10)
+//				<< "\nType in another number: " );
     return 0;
 }

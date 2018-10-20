@@ -1,13 +1,15 @@
 #ifndef CLASSEA_H
 #define CLASSEA_H
 
+#include <string>
+
 class ClasseA{
 
 public:	
 	ClasseA();
 	~ClasseA();
 
-	static const char* value();
+	static const std::string value();
 
 };
 

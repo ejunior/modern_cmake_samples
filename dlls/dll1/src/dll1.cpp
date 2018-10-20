@@ -9,13 +9,14 @@
 Dll1::Dll1(){}
 Dll1::~Dll1(){}
 
-const char* Dll1::getText(){
+const std::string Dll1::getText(){
+
 	Lib1 lib1;
 	
 	std::string a(ClasseA::value());
 	std::string b(lib1.getText());
 	
-	std::string valor = a+b;
+	std::string valor = a+" "+b;
 
-	return valor.c_str();
+	return valor;
 }
