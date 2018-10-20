@@ -1,3 +1,4 @@
+
 project(mysqrt VERSION 1.2.3 LANGUAGES CXX)
 
 # configure a header file to pass some of the CMake settings
@@ -12,8 +13,12 @@ configure_file (
 include_directories(${PROJECT_BINARY_DIR})
 
 
-
+# add the executable
 add_executable(${PROJECT_NAME} mysqrt.cxx)
 target_link_libraries (${PROJECT_NAME} Boost::boost)
 
-# add the executable
+include( CTest )
+
+enable_testing()
+
+add_test( 9e3 ${PROJECT_NAME} 9 )

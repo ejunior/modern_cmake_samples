@@ -3,6 +3,8 @@ project(Lib1 VERSION 0.1 LANGUAGES CXX)
 add_library(${PROJECT_NAME} STATIC src/lib1.cpp)
 add_library("${PROJECT_NAME}::${PROJECT_NAME}" ALIAS ${PROJECT_NAME})
 
+set_property(TARGET ${PROJECT_NAME} PROPERTY CXX_STANDARD 11)
+
 target_include_directories(${PROJECT_NAME}
     PUBLIC 
         $<INSTALL_INTERFACE:include>    

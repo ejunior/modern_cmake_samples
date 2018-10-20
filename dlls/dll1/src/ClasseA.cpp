@@ -1,9 +1,9 @@
 #include "ClasseA.h"
 
-ClasseA::ClasseA(){};
+ClasseA::ClasseA() = default;;
 ClasseA::~ClasseA(){};
 
-const char* ClasseA::value(){
-		return "A";
+const std::string ClasseA::value(){
+		return "A ClassA";
 }	
 

@@ -3,16 +3,18 @@ project(Dll1 VERSION 0.1 LANGUAGES CXX)
 # header and sources
 
 # create the dll
-add_library(${PROJECT_NAME} SHARED src/dll1.cpp)
+add_library(${PROJECT_NAME} SHARED 
+	src/dll1.cpp
+	src/ClasseA.cpp
+	)
 
 
 target_include_directories(${PROJECT_NAME} PUBLIC
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
     $<INSTALL_INTERFACE:include>
-    src
     PRIVATE src)
 
-target_compile_options(${PROJECT_NAME} PRIVATE -lm)
+set_property(TARGET ${PROJECT_NAME} PROPERTY CXX_STANDARD 11)
 
 add_library("${PROJECT_NAME}::${PROJECT_NAME}" ALIAS ${PROJECT_NAME})
 
