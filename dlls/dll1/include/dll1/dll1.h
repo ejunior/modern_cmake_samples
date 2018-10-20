@@ -7,13 +7,13 @@
  	#define FNDT_DLL_EXPORT
 #endif
 
-class FNDT_DLL_EXPORT Dll1
+class Dll1
 {
 public:
 	Dll1();
 	~Dll1();
 
-	const char* getText();
+    FNDT_DLL_EXPORT const std::string getText();
 
 };
 

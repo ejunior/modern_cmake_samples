@@ -1,10 +1,15 @@
 project(palmerinha VERSION 0.0.1 LANGUAGES CXX)
 
 #create binaries 
-add_executable(${PROJECT_NAME} main.cpp)
+add_executable(${PROJECT_NAME} src/main.cpp)
+
+target_include_directories(${PROJECT_NAME} PRIVATE Dll1::Dll1)
+
+#target_include_directories(${PROJECT_NAME} PUBLIC Dll1)
+find_library(${PROJECT_NAME} Dll1::Dll1)
 
 #linker
-target_link_libraries(${PROJECT_NAME} dll1::dll1 Boost::boost)
+target_link_libraries(${PROJECT_NAME} Dll1::Dll1 Boost::boost)
 
 #config install
 install( 	TARGETS ${PROJECT_NAME}

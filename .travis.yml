@@ -1,0 +1,17 @@
+language: cpp 
+os: osx
+
+osx_image: xcode10
+#  env:
+#    - MATRIX_EVAL="brew install gcc && CC=gcc-7 && CXX=g++-7"
+
+compiler:
+  - clang
+  - gcc
+  
+before_install:
+    - eval "${MATRIX_EVAL}"
+    - cmake .
+
+script:
+  - make
