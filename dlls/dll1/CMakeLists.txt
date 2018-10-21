@@ -8,15 +8,16 @@ add_library(${PROJECT_NAME} SHARED
 	src/ClasseA.cpp
 	)
 
+add_library("${PROJECT_NAME}::${PROJECT_NAME}" ALIAS ${PROJECT_NAME})
 
-target_include_directories(${PROJECT_NAME} PUBLIC
-    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
-    $<INSTALL_INTERFACE:include>
-    PRIVATE src)
+target_include_directories(${PROJECT_NAME}
+		PUBLIC
+    		$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+    		$<INSTALL_INTERFACE:include>
+    	PRIVATE
+			src)
 
 set_property(TARGET ${PROJECT_NAME} PROPERTY CXX_STANDARD 11)
-
-add_library("${PROJECT_NAME}::${PROJECT_NAME}" ALIAS ${PROJECT_NAME})
 
 # linker
 target_link_libraries(${PROJECT_NAME} Lib1::Lib1)
