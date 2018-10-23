@@ -8,6 +8,8 @@ target_include_directories(${PROJECT_NAME} PRIVATE Dll1::Dll1)
 #target_include_directories(${PROJECT_NAME} PUBLIC Dll1)
 find_library(${PROJECT_NAME} Dll1::Dll1)
 
+set_property(TARGET ${PROJECT_NAME} PROPERTY CXX_STANDARD 11)
+
 #linker
 target_link_libraries(${PROJECT_NAME} Dll1::Dll1 Boost::boost)
 
