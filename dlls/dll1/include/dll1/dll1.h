@@ -10,8 +10,8 @@
 class Dll1
 {
 public:
-	Dll1();
-	~Dll1();
+    FNDT_DLL_EXPORT Dll1();
+    FNDT_DLL_EXPORT ~Dll1();
 
     FNDT_DLL_EXPORT const std::string getText();
 

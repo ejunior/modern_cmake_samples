@@ -1,4 +1,3 @@
-
 project(mysqrt VERSION 1.2.3 LANGUAGES CXX)
 
 # configure a header file to pass some of the CMake settings

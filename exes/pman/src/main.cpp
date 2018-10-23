@@ -3,7 +3,7 @@
 #include <iostream>
 #include <iterator>
 #include <algorithm>
-
+#include <string>
 #include <dll1/dll1.h>
 
 int main()
@@ -12,7 +12,8 @@ int main()
 
 	Dll1 dll1;
 
-    std::cout << "teste: " << dll1.getText() << "\n\n";
+	auto text = dll1.getText();
+    std::cout << "teste: " << text << "\n\n";
 
 //    std::cout << "Type in any number: ";
 

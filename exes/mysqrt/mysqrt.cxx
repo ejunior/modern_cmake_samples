@@ -17,6 +17,8 @@ int main (int argc, char *argv[])
     return 1;
     }
 
+    //cout <<
+
   double inputValue = atof(argv[1]);
   double outputValue = sqrt(inputValue);
   fprintf(stdout,"The square root of %g is %g\n",

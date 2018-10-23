@@ -3,6 +3,7 @@
 /cmake-build-debug/
 
 # Default ignored files
+/.idea/
 /.idea/shelf/
 /.idea/workspace.xml
 
