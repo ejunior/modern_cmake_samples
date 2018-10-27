@@ -35,8 +35,10 @@ int main(int argc, char *argv[])
 		return 1;
 	}
 
-	// Create the display
-	display = al_create_display(640, 480);
+	// Create the
+    al_set_new_display_flags(ALLEGRO_RESIZABLE);
+    al_set_new_display_flags(ALLEGRO_OPENGL);
+    display = al_create_display(640, 480);
 	if (!display) {
 		fprintf(stderr, "Failed to create display.\n");
 		return 1;
@@ -54,7 +56,7 @@ int main(int argc, char *argv[])
 	al_register_event_source(event_queue, al_get_timer_event_source(timer));
 
 	// Display a black screen
-	al_clear_to_color(al_map_rgb(0, 0, 0));
+	al_clear_to_color(al_map_rgb(1, 1, 1));
 	al_flip_display();
 
 	// Start the timer
@@ -80,7 +82,7 @@ int main(int argc, char *argv[])
 				case ALLEGRO_EVENT_DISPLAY_CLOSE:
 					running = false;
 					break;
-				default:
+                default:
 					fprintf(stderr, "Unsupported event received: %d\n", event.type);
 					break;
 			}
@@ -89,7 +91,7 @@ int main(int argc, char *argv[])
 		// Check if we need to redraw
 		if (redraw && al_is_event_queue_empty(event_queue)) {
 			// Redraw
-			al_clear_to_color(al_map_rgb(0, 0, 0));
+			al_clear_to_color(al_map_rgb(50, 50, 80));
 			al_flip_display();
 			redraw = false;
 		}
