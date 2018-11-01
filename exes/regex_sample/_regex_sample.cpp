@@ -2,85 +2,93 @@
 // Created by José Edmilson V. dos Santos Jr. on 2018-10-27.
 //
 
-#include <cmath>
-#include <cstdio>
 #include <vector>
-#include <tuple>
 #include <iostream>
-#include <algorithm>
 #include <fstream>
-#include <sstream>
 #include <regex>
+#include <sstream>
 
 using namespace std;
 
-vector<int> parseInts(string str) {
-    stringstream ss{str};
-    vector<int> numbers;
 
-    while (ss) {
-        int a;
-        char ch;
-        ss >> a >> ch;
-        numbers.push_back(a);
+vector<string> keys, values;
+string name;
+
+void parseTag(string tagText) {
+    int index = 0;
+
+    stringstream ss{tagText};
+    string token;
+
+    while (ss >> token) {
+        if (token.substr(0, 2) == "</") {
+            //todo: encolher a hierarquina dos nomes
+            //name.replace("","")
+
+        } else if (token.substr(0, 1) == "<") {
+            token = token.substr(1, token.size());
+            name += (name.empty())? token: "."+ token;
+            cout << name <<'\n';
+        }
+        else if(token.find('='))
+            cout << token << '\n';
     }
-
-    return numbers;
 }
 
 
-void changeInputBuffer(std::istream &stream, std::streambuf **original, ifstream &txtbufer) {
-         *original = stream.rdbuf();
-        stream.rdbuf(txtbufer.rdbuf());
+inline void changeInputBuffer(std::istream &stream, std::streambuf **original) {
+    auto input = new ifstream("sample_input.txt");
+    *original = stream.rdbuf();
+    stream.rdbuf(input->rdbuf());
 }
 
 
-void restoreInputBuffer(std::istream& stream, streambuf* orig) {
+void restoreInputBuffer(std::istream &stream, streambuf *orig) {
     stream.rdbuf(orig);
 }
 
 
-
-void readParameters(std::istream& stream, int &tagsQuantity, int &queriesQuantity) {
+inline void readParameters(std::istream &stream, int &tagsQuantity, int &queriesQuantity) {
     stream >> tagsQuantity >> queriesQuantity;
     stream >> ws; // clean whitespaces from buffer
 }
 
 
-int main() {
-
-    ifstream input("sample_input.txt");
-
-    std::streambuf *orig;
-    vector<string> tags{}, queries{};
-    int tagsQuantity, queriesQuantity;
-
-
-    changeInputBuffer(std::cin, &orig, input);
-
-    readParameters( cin, tagsQuantity, queriesQuantity);
-
-    for (int i = 0; i < tagsQuantity; i++) {
-        string tag;
-        getline(cin, tag);
-        tags.push_back(tag);
-    }
-
-    for (int i = 0; i < queriesQuantity; i++) {
+inline vector<string> readLinesFromInput(int lines) {
+    vector<string> v;
+    for (int i = 0; i < lines; i++) {
         string query{};
         getline(cin, query);
-        queries.push_back(query);
+        v.push_back(query);
     }
+    return v;
+}
+
+int main() {
+
+    std::streambuf *orig;
+    int tagsQuantity, queriesQuantity;
+    vector<string> tags{}, queries{};
+
+    changeInputBuffer(std::cin, &orig);
+
+    readParameters(cin, tagsQuantity, queriesQuantity);
+
+    tags = readLinesFromInput(tagsQuantity);
+
+    queries = readLinesFromInput(queriesQuantity);
 
     for (string s: tags) {
-        cout << "t: " << s << "\n";
+        parseTag(s);
+        cout << ": " << s << "\n";
     }
 
     for (string s: queries) {
-        cout << "Q: " << s << "\n";
+        cout << "q: " << s << "\n";
     }
 
     restoreInputBuffer(cin, orig);   //reset to standard input again
+
 
     return 0;
 
