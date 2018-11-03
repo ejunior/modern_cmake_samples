@@ -14,6 +14,8 @@ project(pman VERSION 0.0.3 LANGUAGES CXX)
 
 #set(ALLEGRO_VERSION "5.2.4.0")
 #set(allegro5_DIR ${PROJECT_SOURCE_DIR}/libsrc/allegro-${ALLEGRO_VERSION})
+enable_testing()
+
 find_package(BOOST REQUIRED COMPONENTS system filesystem chrono)
 
 # set environmet

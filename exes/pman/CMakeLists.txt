@@ -14,10 +14,10 @@ set_property(TARGET ${PROJECT_NAME} PROPERTY CXX_STANDARD 11)
 target_link_libraries(${PROJECT_NAME} Dll1::Dll1 Boost::boost)
 
 #config install
-install( 	TARGETS ${PROJECT_NAME}
-			RUNTIME DESTINATION bin
-			LIBRARY DESTINATION lib
-			ARCHIVE DESTINATION lib/static) # statics libs vão aqui
+#install( 	TARGETS ${PROJECT_NAME}
+#			RUNTIME DESTINATION bin
+#			LIBRARY DESTINATION lib
+#			ARCHIVE DESTINATION lib/static) # statics libs vão aqui
 
 if(MSVC)
 set_target_properties(${PROJECT_NAME} PROPERTIES

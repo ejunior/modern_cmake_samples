@@ -12,7 +12,7 @@ target_compile_options(-lallegro_main)
 #target_link_libraries(${PROJECT_NAME} )
 
 #config install
-install( 	TARGETS ${PROJECT_NAME}
-			RUNTIME DESTINATION bin
-			LIBRARY DESTINATION lib
-			ARCHIVE DESTINATION lib/static) # statics libs vão aqui
+#install( 	TARGETS ${PROJECT_NAME}
+#			RUNTIME DESTINATION bin
+#			LIBRARY DESTINATION lib
+#			ARCHIVE DESTINATION lib/static) # statics libs vão aqui
