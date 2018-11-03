@@ -21,3 +21,4 @@ include( CTest )
 enable_testing()
 
 add_test( 9e3 ${PROJECT_NAME} 9 )
+add_test( err ${PROJECT_NAME} 0 )
