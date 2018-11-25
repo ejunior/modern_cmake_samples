@@ -18,6 +18,7 @@ enable_testing()
 
 find_package(BOOST REQUIRED COMPONENTS system filesystem chrono)
 
+
 # set environmet
 include_directories(${PROJECT_SOURCE_DIR}/include)
 add_definitions(-DTEST_DEF) # add definitions
@@ -30,6 +31,7 @@ message("Binary tree Path:  ${PROJECT_BINARY_DIR}")
 message("Source tree Path:  ${PROJECT_SOURCE_DIR}")
 
 # add subfolders
+add_subdirectory(lib)
 add_subdirectory(exes)
 add_subdirectory(dlls)
 add_subdirectory(libsrc)
