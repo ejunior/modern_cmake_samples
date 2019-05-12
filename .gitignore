@@ -20,3 +20,4 @@ http-client.private.env.json
 .idea/modules.xml
 .idea/pman_cmake.iml
 .idea/vcs.xml
+.vscode/

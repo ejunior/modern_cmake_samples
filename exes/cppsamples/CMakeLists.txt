@@ -1,6 +1,6 @@
 project(cppsample)
 
-add_executable(${PROJECT_NAME} teste.cpp)
+add_executable(${PROJECT_NAME} Teste.cpp)
 
 #target_include_directories(${PROJECT_NAME} Boost::boost)
 
