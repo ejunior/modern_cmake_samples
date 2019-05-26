@@ -8,6 +8,8 @@ project(pman VERSION 0.0.3 LANGUAGES CXX)
 #set(VERSION_PATCH "2")
 #set(VERSION "${VERSION_MAJOR}.${VERSION_MINOR}.${VERSION_PATCH}")
 
+ENABLE_TESTING()
+
 # Must use GNUInstallDirs to install libraries into correct
 # locations on all platforms.
 #include(GNUInstallDirs)
@@ -32,3 +34,4 @@ message("Source tree Path:  ${PROJECT_SOURCE_DIR}")
 add_subdirectory(exes)
 add_subdirectory(dlls)
 add_subdirectory(libsrc)
+

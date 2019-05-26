@@ -6,16 +6,13 @@
 #include <utility>
 #include <iostream>
 
+#include "samples.h"
+
 using namespace std;
 using namespace boost;
 
 auto sum_product(double a, double b) -> decltype(make_tuple(a, b, a + b, a * b)) { // -> not needed c++ 14
     return make_tuple(a, b, a + b, a * b);
-}
-
-
-string getName() {
-    return "Junior";
 }
 
 void printName(const string &s) {
