@@ -14,7 +14,7 @@ project(pman VERSION 0.0.3 LANGUAGES CXX)
 
 #set(ALLEGRO_VERSION "5.2.4.0")
 #set(allegro5_DIR ${PROJECT_SOURCE_DIR}/libsrc/allegro-${ALLEGRO_VERSION})
-find_package(BOOST REQUIRED COMPONENTS system filesystem chrono)
+#find_package(BOOST REQUIRED COMPONENTS system filesystem chrono)
 
 # set environmet
 include_directories(${PROJECT_SOURCE_DIR}/include)
@@ -31,3 +31,4 @@ message("Source tree Path:  ${PROJECT_SOURCE_DIR}")
 add_subdirectory(exes)
 add_subdirectory(dlls)
 add_subdirectory(libsrc)
+add_subdirectory(vendor/allegro5)
